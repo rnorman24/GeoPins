@@ -5,8 +5,8 @@ import { withStyles } from "@material-ui/core/styles";
 
 const Login = ({ classes }) => {
   const onSuccess = googleUser => {
-    const idToken = googleUser.getAuthResponse().id_token
-    console.log({ idToken })
+    const idToken = googleUser.getAuthResponse().id_token;
+    console.log({ idToken });
   };
 
   return (
