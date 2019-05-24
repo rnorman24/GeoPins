@@ -4,8 +4,14 @@ import { withStyles } from "@material-ui/core/styles";
 // import Typography from "@material-ui/core/Typography";
 
 const Login = ({ classes }) => {
+  const onSuccess = googleUser => {
+    console.log({ googleUser })
+  }
+
   return (
-    <GoogleLogin clientId="OAUTH_CLIENT_ID=211278434930-vunn4kbu6h2bgjgbcm9fkk7agrddc0nd.apps.googleusercontent.com" />
+    <GoogleLogin clientId="211278434930-vunn4kbu6h2bgjgbcm9fkk7agrddc0nd.apps.googleusercontent.com"
+    onSuccess={onSuccess}
+    />
   );
 };
 
