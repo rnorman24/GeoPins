@@ -18,7 +18,7 @@ const server = new ApolloServer({
   resolvers,
   context: async ({ req }) => {
     let authToken = null;
-    let currentUser = null
+    let currentUser = null;
     try {
       authToken = req.headers.authorization;
       if (authToken) {
@@ -27,7 +27,7 @@ const server = new ApolloServer({
     } catch (err) {
       console.error(`Unable to authenticate user with token &{authToken}`);
     }
-    return { currentUser }
+    return { currentUser };
   }
 });
 
