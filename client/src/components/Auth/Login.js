@@ -22,39 +22,39 @@ const Login = ({ classes }) => {
 
   const onSuccess = async googleUser => {
     try {
-    const idToken = googleUser.getAuthResponse().id_token;
-    const client = new GraphQLClient("http://localhost:4000/graphql", {
-      headers: { authorization: idToken }
-    });
-    const { me } = await client.request(ME_QUERY);
-    dispatch({ type: "LOGIN_USER", payload: me });
-  } catch (err) {
-    onFailure(err)
-  }
+      const idToken = googleUser.getAuthResponse().id_token;
+      const client = new GraphQLClient("http://localhost:4000/graphql", {
+        headers: { authorization: idToken }
+      });
+      const { me } = await client.request(ME_QUERY);
+      dispatch({ type: "LOGIN_USER", payload: me });
+    } catch (err) {
+      onFailure(err);
+    }
   };
 
   const onFailure = err => {
-    console.error('Error logging in', err)
-  }
+    console.error("Error logging in", err);
+  };
 
   return (
     <div className={classes.root}>
-    <Typography
-      component='h1'
-      variant='h3'
-      gutterBottom
-      noWrap
-      style={{ color: 'rgb(66, 133, 244)' }}
-    >
-      Welcome
-    </Typography>
-    <GoogleLogin
-      clientId="211278434930-vunn4kbu6h2bgjgbcm9fkk7agrddc0nd.apps.googleusercontent.com"
-      onSuccess={onSuccess}
-      onFailure={onFailure}
-      isSignedIn={true}
-      theme='dark'
-    />
+      <Typography
+        component="h1"
+        variant="h3"
+        gutterBottom
+        noWrap
+        style={{ color: "rgb(66, 133, 244)" }}
+      >
+        Welcome
+      </Typography>
+      <GoogleLogin
+        clientId="211278434930-vunn4kbu6h2bgjgbcm9fkk7agrddc0nd.apps.googleusercontent.com"
+        onSuccess={onSuccess}
+        onFailure={onFailure}
+        isSignedIn={true}
+        theme="dark"
+      />
     </div>
   );
 };
