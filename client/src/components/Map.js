@@ -13,20 +13,20 @@ const INITIAL_VIEWPORT = {
 
 const Map = ({ classes }) => {
   const [viewport, setViewport] = useState(INITIAL_VIEWPORT);
-  const [userPosition, setUserPosition] = useState(null)
+  const [userPosition, setUserPosition] = useState(null);
   useEffect(() => {
-    getUserPosition()
-  }, [])
+    getUserPosition();
+  }, []);
 
   const getUserPosition = () => {
-    if ('geolocation' in navigator) {
+    if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(position => {
-        const {  latitude, longitude } = position.coords
-        setViewport({ ...viewport, latitude, longitude })
-        setUserPosition({ latitude, longitude })
-      })
+        const { latitude, longitude } = position.coords;
+        setViewport({ ...viewport, latitude, longitude });
+        setUserPosition({ latitude, longitude });
+      });
     }
-  }
+  };
 
   return (
     <div className={classes.root}>
