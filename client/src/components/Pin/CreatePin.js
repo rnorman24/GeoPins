@@ -44,8 +44,11 @@ const CreatePin = ({ classes }) => {
         />
         <label htmlFor="image">
           <Button
-            style={{ color: image && 'green' }}
-            component="span" size="small" className={classes.button}>
+            style={{ color: image && "green" }}
+            component="span"
+            size="small"
+            className={classes.button}
+          >
             <AddAPhotoIcon />
           </Button>
         </label>
