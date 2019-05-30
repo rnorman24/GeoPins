@@ -8,16 +8,16 @@ const NoContent = ({ classes }) => (
     <ExploreIcon className={classes.icon} />
     <Typography
       noWrap
-      component='h2'
-      variant='h6'
-      align='center'
-      color='textPrimary'
+      component="h2"
+      variant="h6"
+      align="center"
+      color="textPrimary"
       gutterBottom
     >
       Click on the map to add a pin
     </Typography>
   </div>
-)
+);
 
 const styles = theme => ({
   root: {
