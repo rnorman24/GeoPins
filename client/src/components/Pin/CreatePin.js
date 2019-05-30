@@ -9,14 +9,14 @@ import ClearIcon from "@material-ui/icons/Clear";
 import SaveIcon from "@material-ui/icons/SaveTwoTone";
 
 const CreatePin = ({ classes }) => {
-  const [title, setTitle] = useState('')
-  const [image, setImage] = useState('')
-  const [content, setContent] = useState('')
+  const [title, setTitle] = useState("");
+  const [image, setImage] = useState("");
+  const [content, setContent] = useState("");
 
   const handleSubmit = event => {
-    event.preventDefault()
-    console.log({ title, image, content })
-  }
+    event.preventDefault();
+    console.log({ title, image, content });
+  };
 
   return (
     <form className={classes.form}>
@@ -29,7 +29,10 @@ const CreatePin = ({ classes }) => {
         <LandscapeIcon className={classes.iconLarge} /> Pin Location
       </Typography>
       <div>
-        <TextField name="title" label="Title" placeholder="Insert pin title"
+        <TextField
+          name="title"
+          label="Title"
+          placeholder="Insert pin title"
           onChange={e => setTitle(e.target.value)}
         />
         <input
