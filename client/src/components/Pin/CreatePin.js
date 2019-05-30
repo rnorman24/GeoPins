@@ -43,7 +43,9 @@ const CreatePin = ({ classes }) => {
           onChange={e => setImage(e.target.files[0])}
         />
         <label htmlFor="image">
-          <Button component="span" size="small" className={classes.button}>
+          <Button
+            style={{ color: image && 'green' }}
+            component="span" size="small" className={classes.button}>
             <AddAPhotoIcon />
           </Button>
         </label>
