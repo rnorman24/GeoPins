@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server");
-const Pin = require('./models/Pin')
+const Pin = require("./models/Pin");
 
 const authenticated = next => (root, args, ctx, info) => {
   if (!ctx.currentUser) {
@@ -17,9 +17,9 @@ module.exports = {
       const newPin = await new Pin({
         ...args.input,
         author: ctx.currentUser._id
-      }).save()
-      const pinAdded = await Pin.populate(newPin, 'author')
-      return pinAdded
+      }).save();
+      const pinAdded = await Pin.populate(newPin, "author");
+      return pinAdded;
     })
   }
 };
