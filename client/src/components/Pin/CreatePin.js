@@ -10,11 +10,11 @@ import ClearIcon from "@material-ui/icons/Clear";
 import SaveIcon from "@material-ui/icons/SaveTwoTone";
 
 import Context from "../../context";
-import { useClient } from '../../client'
+import { useClient } from "../../client";
 import { CREATE_PIN_MUTATION } from "../../graphql/mutations";
 
 const CreatePin = ({ classes }) => {
-  const client = useClient()
+  const client = useClient();
   const { state, dispatch } = useContext(Context);
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
