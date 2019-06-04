@@ -30,7 +30,6 @@ const Map = ({ classes }) => {
     getUserPosition();
   }, []);
 
-
   const getUserPosition = () => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(position => {
@@ -43,7 +42,7 @@ const Map = ({ classes }) => {
 
   const getPins = async () => {
     const { getPins } = await client.request(GET_PINS_QUERY);
-    dispatch({ type: 'GET_PINS', payload: getPins })
+    dispatch({ type: "GET_PINS", payload: getPins });
   };
 
   const handleMapClick = ({ lngLat, leftButton }) => {
@@ -103,14 +102,14 @@ const Map = ({ classes }) => {
         {/* Created Pins */}
         {state.pins.map(pin => (
           <Marker
-          key={pin._id}
-          latitude={pin.latitude}
-          longitude={pin.longitude}
-          offsetLeft={-19}
-          offsetTop={-37}
-        >
-          <PinIcon size={40} color="darkblue" />
-        </Marker>
+            key={pin._id}
+            latitude={pin.latitude}
+            longitude={pin.longitude}
+            offsetLeft={-19}
+            offsetTop={-37}
+          >
+            <PinIcon size={40} color="darkblue" />
+          </Marker>
         ))}
       </ReactMapGL>
 
