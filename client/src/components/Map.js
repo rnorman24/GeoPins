@@ -5,8 +5,8 @@ import { withStyles } from "@material-ui/core/styles";
 // import Typography from "@material-ui/core/Typography";
 // import DeleteIcon from "@material-ui/icons/DeleteTwoTone";
 
-import { useClient } from '../client'
-import { GET_PINS_QUERY } from '../graphql/queries'
+import { useClient } from "../client";
+import { GET_PINS_QUERY } from "../graphql/queries";
 import PinIcon from "./PinIcon";
 import Blog from "./Blog";
 import Context from "../context";
@@ -18,7 +18,7 @@ const INITIAL_VIEWPORT = {
 };
 
 const Map = ({ classes }) => {
-  const client = useClient()
+  const client = useClient();
   const { state, dispatch } = useContext(Context);
   const [viewport, setViewport] = useState(INITIAL_VIEWPORT);
   const [userPosition, setUserPosition] = useState(null);
@@ -26,8 +26,8 @@ const Map = ({ classes }) => {
     getUserPosition();
   }, []);
   useEffect(() => {
-    getPins()
-  }, [])
+    getPins();
+  }, []);
 
   const getUserPosition = () => {
     if ("geolocation" in navigator) {
@@ -40,9 +40,9 @@ const Map = ({ classes }) => {
   };
 
   const getPins = async () => {
-    const { getPins } = await client.request(GET_PINS_QUERY)
-    console.log({ getPins })
-  }
+    const { getPins } = await client.request(GET_PINS_QUERY);
+    console.log({ getPins });
+  };
 
   const handleMapClick = ({ lngLat, leftButton }) => {
     if (!leftButton) return;

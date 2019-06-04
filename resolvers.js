@@ -12,8 +12,10 @@ module.exports = {
   Query: {
     me: authenticated((root, args, ctx) => ctx.currentUser),
     getPins: async (root, args, ctx) => {
-      const pins = await Pin.find({}).populate('author').populate('comments.author')
-      return pins
+      const pins = await Pin.find({})
+        .populate("author")
+        .populate("comments.author");
+      return pins;
     }
   },
   Mutation: {
