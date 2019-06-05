@@ -29,4 +29,4 @@ export const DELETE_PIN_MUTATION = `
       _id
     }
   }
-`
+`;
