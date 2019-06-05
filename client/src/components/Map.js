@@ -69,7 +69,7 @@ const Map = ({ classes }) => {
     dispatch({ type: "SET_PIN", payload: pin });
   };
 
-  const isAuthUser = () => state.currentUser._id === popup.author._id
+  const isAuthUser = () => state.currentUser._id === popup.author._id;
 
   return (
     <div className={classes.root}>
