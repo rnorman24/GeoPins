@@ -29,7 +29,7 @@ const Map = ({ classes }) => {
   useEffect(() => {
     getUserPosition();
   }, []);
-  const [popup, setPopup] = useState(null)
+  const [popup, setPopup] = useState(null);
 
   const getUserPosition = () => {
     if ("geolocation" in navigator) {
@@ -65,9 +65,9 @@ const Map = ({ classes }) => {
   };
 
   const handleSelectPin = pin => {
-    setPopup(pin)
-    dispatch({ type: 'SET_PIN', payload: pin })
-  }
+    setPopup(pin);
+    dispatch({ type: "SET_PIN", payload: pin });
+  };
 
   return (
     <div className={classes.root}>
@@ -121,15 +121,17 @@ const Map = ({ classes }) => {
             offsetTop={-37}
           >
             <PinIcon
-            onClick={() => handleSelectPin(pin)}
-            size={40} color={highlightNewPin(pin)} />
+              onClick={() => handleSelectPin(pin)}
+              size={40}
+              color={highlightNewPin(pin)}
+            />
           </Marker>
         ))}
 
         {/* Popup Dialog for Created Pins */}
         {popup && (
           <Popup
-            anchor='top'
+            anchor="top"
             latitude={popup.latitude}
             longitude={popup.longitude}
             closeOnClick={false}
