@@ -13,14 +13,18 @@ const CreateComment = ({ classes }) => {
         <IconButton className={classes.clearButton}>
           <ClearIcon />
         </IconButton>
-        <InputBase className={classes.input} placeholder='Add Comment' multiline={true} />
+        <InputBase
+          className={classes.input}
+          placeholder="Add Comment"
+          multiline={true}
+        />
         <IconButton className={classes.sendButton}>
           <SendIcon />
         </IconButton>
       </form>
       <Divider />
     </>
-  )
+  );
 };
 
 const styles = theme => ({

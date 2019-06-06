@@ -10,14 +10,18 @@ import Typography from "@material-ui/core/Typography";
 const Comments = ({ comments, classes }) => (
   <List className={classes.root}>
     {comments.map((comment, i) => (
-      <ListItem key={i} alignItems='flex-start'>
+      <ListItem key={i} alignItems="flex-start">
         <ListItemAvatar>
           <Avatar src={comment.author.picture} alt={comment.author.name} />
         </ListItemAvatar>
         <ListItemText
           primary={comment.text}
           secondary={
-            <Typography className={classes.inline} component='span' color='textPrimary'>
+            <Typography
+              className={classes.inline}
+              component="span"
+              color="textPrimary"
+            >
               {comment.author.name}
             </Typography>
           }
@@ -25,8 +29,7 @@ const Comments = ({ comments, classes }) => (
       </ListItem>
     ))}
   </List>
-
-)
+);
 
 const styles = theme => ({
   root: {
