@@ -3,7 +3,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import FaceIcon from "@material-ui/icons/Face";
-import format from 'date-fns/format'
+import format from "date-fns/format";
 
 import Context from "../../context";
 
@@ -31,7 +31,7 @@ const PinContent = ({ classes }) => {
         gutterBottom
       >
         <AccessTimeIcon className={classes.icon} />
-        {format(Number(createdAt), 'MMM Do, YYYY')}
+        {format(Number(createdAt), "MMM Do, YYYY")}
       </Typography>
       <Typography variant="subtitle1" gutterBottom>
         {content}
