@@ -1,4 +1,4 @@
-import gql from 'graphql-tag'
+import gql from "graphql-tag";
 
 export const PIN_ADDED_SUBSCRIPTION = gql`
   subscription {
@@ -25,7 +25,7 @@ export const PIN_ADDED_SUBSCRIPTION = gql`
       }
     }
   }
-`
+`;
 
 export const PIN_UPDATED_SUBSCRIPTION = gql`
   subscription {
@@ -48,10 +48,10 @@ export const PIN_UPDATED_SUBSCRIPTION = gql`
           name
           picture
         }
-      }  
+      }
     }
   }
-`
+`;
 
 export const PIN_DELETED_SUBSCRIPTION = gql`
   subscription {
@@ -59,4 +59,4 @@ export const PIN_DELETED_SUBSCRIPTION = gql`
       _id
     }
   }
-`
+`;
