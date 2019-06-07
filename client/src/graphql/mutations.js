@@ -55,4 +55,4 @@ export const CREATE_COMMENT_MUTATION = `
       }
     }
   }
-`
+`;
