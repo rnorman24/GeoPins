@@ -47,10 +47,7 @@ const CreatePin = ({ classes }) => {
       const url = await handleImageUpload();
       const { latitude, longitude } = state.draft;
       const variables = { title, image: url, content, latitude, longitude };
-      await client.request(
-        CREATE_PIN_MUTATION,
-        variables
-      );
+      await client.request(CREATE_PIN_MUTATION, variables);
       handleDeleteDraft();
     } catch (err) {
       setSubmitting(false);
