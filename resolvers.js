@@ -1,10 +1,10 @@
 const { AuthenticationError, PubSub } = require("apollo-server");
 const Pin = require("./models/Pin");
 
-const pubsub = new PubSub()
-const PIN_ADDED = "PIN_ADDED"
-const PIN_DELETED = 'PIN_DELETED'
-const PIN_UPDATED = 'PIN_UPDATED'
+const pubsub = new PubSub();
+const PIN_ADDED = "PIN_ADDED";
+const PIN_DELETED = "PIN_DELETED";
+const PIN_UPDATED = "PIN_UPDATED";
 
 const authenticated = next => (root, args, ctx, info) => {
   if (!ctx.currentUser) {
@@ -30,12 +30,12 @@ module.exports = {
         author: ctx.currentUser._id
       }).save();
       const pinAdded = await Pin.populate(newPin, "author");
-      pubsub.publish(PIN_ADDED, { pinAdded })
+      pubsub.publish(PIN_ADDED, { pinAdded });
       return pinAdded;
     }),
     deletePin: authenticated(async (root, args, ctx) => {
       const pinDeleted = await Pin.findOneAndDelete({ _id: args.pinId }).exec();
-      pubsub.publish(PIN_DELETED, { pinDeleted })
+      pubsub.publish(PIN_DELETED, { pinDeleted });
       return pinDeleted;
     }),
     createComment: authenticated(async (root, args, ctx) => {
@@ -47,7 +47,7 @@ module.exports = {
       )
         .populate("author")
         .populate("comments.author");
-        pubsub.publish(PIN_UPDATED, { pinUpdated })
+      pubsub.publish(PIN_UPDATED, { pinUpdated });
       return pinUpdated;
     })
   },
