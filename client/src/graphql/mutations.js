@@ -11,6 +11,7 @@ export const CREATE_PIN_MUTATION = `
       createdAt
       title
       image
+      content
       latitude
       longitude
       author {
