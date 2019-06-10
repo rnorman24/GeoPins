@@ -5,7 +5,7 @@ import differenceInMinutes from "date-fns/difference_in_minutes";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import DeleteIcon from "@material-ui/icons/DeleteTwoTone";
-import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery'
+import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
 import { Subscription } from "react-apollo";
 
 import { useClient } from "../client";
@@ -28,7 +28,7 @@ const INITIAL_VIEWPORT = {
 
 const Map = ({ classes }) => {
   const client = useClient();
-  const mobileSize = useMediaQuery('(max-width: 650px)')
+  const mobileSize = useMediaQuery("(max-width: 650px)");
   const { state, dispatch } = useContext(Context);
   useEffect(() => {
     getPins();
