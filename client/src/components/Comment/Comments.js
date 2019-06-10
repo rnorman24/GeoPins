@@ -24,8 +24,8 @@ const Comments = ({ comments, classes }) => (
                 component="span"
                 color="textPrimary"
               >
-                {comment.author.name + " "}
-              </Typography>
+                {comment.author.name}
+              </Typography>{" "}
               · {distanceInWordsToNow(Number(comment.createdAt))} ago
             </>
           }
