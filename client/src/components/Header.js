@@ -30,6 +30,7 @@ const Header = ({ classes }) => {
               GeoPins
             </Typography>
           </div>
+
           {/* Current User Info */}
           {currentUser && (
             <div className={classes.grow}>
